@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<view class='title'>hello {{wording}}!</view>
+<view class="image-wrap">
+<image mode="widthFix"src="../../images/640.gif"></image>
+</view>
+<button bind:tap="onClick">点击</button>

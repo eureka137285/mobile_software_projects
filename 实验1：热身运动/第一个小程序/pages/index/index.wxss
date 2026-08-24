@@ -1,0 +1,14 @@
+/**index.wxss**/
+page{
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.title{
+  color: red;
+}
+.image-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}//图片居中
