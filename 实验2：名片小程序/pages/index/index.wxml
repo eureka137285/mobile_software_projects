@@ -1,0 +1,154 @@
+<view class="page">
+  <view class="header">
+    <navigation-bar title="{{appName}}" back="{{false}}" color="#FFFFFF" background="linear-gradient(90deg, #174E8A, #2E7EC0)">
+    </navigation-bar>
+  </view>
+
+  <scroll-view class="scrollarea" scroll-y type="list">
+    <!-- 头图：单独横向铺开显示 -->
+    <view class="banner">
+      <image src="https://a1.boltp.com/2026/08/25/6a8cf9576a839.png" mode="widthFix"></image>
+    </view>
+
+    <view class="page-body">
+      <!-- 基本信息 -->
+      <view class="card">
+        <view class="card-title">
+          <view class="title-bar"></view>
+          <text>基本信息</text>
+        </view>
+        <view class="info-grid">
+          <view class="info-item">
+            <view class="info-cell">
+              <text class="info-label">姓名</text>
+              <text class="info-value">{{name}}</text>
+            </view>
+          </view>
+          <view class="info-item">
+            <view class="info-cell">
+              <text class="info-label">性别</text>
+              <text class="info-value">男</text>
+            </view>
+          </view>
+          <view class="info-item">
+            <view class="info-cell">
+              <text class="info-label">籍贯</text>
+              <text class="info-value">山东德州</text>
+            </view>
+          </view>
+          <view class="info-item">
+            <view class="info-cell">
+              <text class="info-label">年级</text>
+              <text class="info-value">{{grade}}</text>
+            </view>
+          </view>
+          <view class="info-item">
+            <view class="info-cell">
+              <text class="info-label">学院</text>
+              <text class="info-value">{{college}}</text>
+            </view>
+          </view>
+          <view class="info-item">
+            <view class="info-cell">
+              <text class="info-label">专业</text>
+              <text class="info-value">{{major}}</text>
+            </view>
+          </view>
+          <view class="info-item">
+            <view class="info-cell">
+              <text class="info-label">学生职务</text>
+              <text class="info-value">{{role1}}</text>
+            </view>
+          </view>
+          <view class="info-item">
+            <view class="info-cell">
+              <text class="info-label">社团职务</text>
+              <text class="info-value">{{role2}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 联系方式 -->
+      <view class="card">
+        <view class="card-title">
+          <view class="title-bar"></view>
+          <text>联系方式</text>
+        </view>
+        <view class="contact-row">
+          <text class="contact-label">电子邮箱</text>
+          <view class="contact-value">
+            <text class="contact-email">{{email}}</text>
+            <view class="copy-pill dark" bindtap="copyEmail">复制</view>
+          </view>
+        </view>
+        <view class="contact-row">
+          <text class="contact-label">所在学校</text>
+          <text class="contact-value">{{school}}</text>
+        </view>
+        <view class="contact-row no-border">
+          <text class="contact-label">所属学院</text>
+          <text class="contact-value">{{college}}</text>
+        </view>
+        <view class="contact-tip">点击邮箱可一键复制；点击右上角「···」可将名片分享给好友或朋友圈</view>
+      </view>
+
+      <!-- 个人简介 -->
+      <view class="card">
+        <view class="card-title">
+          <view class="title-bar"></view>
+          <text>个人简介</text>
+        </view>
+        <view class="para">{{intro}}</view>
+      </view>
+
+      <!-- 荣誉奖项 -->
+      <view class="card">
+        <view class="card-title">
+          <view class="title-bar"></view>
+          <text>荣誉奖项</text>
+        </view>
+        <view class="award-item">
+          <view class="award-icon">奖</view>
+          <text class="award-text">国家励志奖学金</text>
+        </view>
+        <view class="award-item">
+          <view class="award-icon">奖</view>
+          <text class="award-text">中国海洋大学综合类三等奖</text>
+        </view>
+        <view class="award-item">
+          <view class="award-icon">奖</view>
+          <text class="award-text">中国海洋大学国家保密学院金城奖学金</text>
+        </view>
+        <view class="award-item">
+          <view class="award-icon">奖</view>
+          <text class="award-text">“优秀共青团员”荣誉称号</text>
+        </view>
+        <view class="award-item no-border">
+          <view class="award-icon">奖</view>
+          <text class="award-text">“优秀青年志愿者”荣誉称号</text>
+        </view>
+      </view>
+
+      <!-- 自我评价 -->
+      <view class="card">
+        <view class="card-title">
+          <view class="title-bar"></view>
+          <text>自我评价</text>
+        </view>
+        <view class="para">{{summary}}</view>
+        <view class="skill-chips">
+          <view class="skill">严谨细致</view>
+          <view class="skill">高效执行</view>
+          <view class="skill">善于分析</view>
+          <view class="skill">动手实践</view>
+          <view class="skill">责任心强</view>
+          <view class="skill">吃苦耐劳</view>
+        </view>
+      </view>
+
+      <view class="footer">© 2026 {{name}} · {{school}} 个人名片</view>
+    </view>
+  </scroll-view>
+
+</view>

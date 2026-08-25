@@ -1,0 +1,197 @@
+/**index.wxss**/
+.page {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #F4F6F9;
+}
+
+.scrollarea {
+  flex: 1;
+  min-height: 0;
+}
+
+.page-body {
+  padding: 20rpx 24rpx 48rpx;
+}
+
+/* 顶部页头设计 */
+.header {
+  flex: none;
+  background: linear-gradient(90deg, #174E8A, #2E7EC0);
+  border-bottom: 3rpx solid rgba(232, 201, 134, 0.75);
+  box-shadow: 0 4rpx 16rpx rgba(23, 78, 138, 0.22);
+}
+
+/* 头图：单独横向铺开 */
+.banner {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.banner image {
+  width: 100%;
+  display: block;
+}
+
+/* 联系方式中的复制胶囊 */
+.copy-pill.dark {
+  margin-left: 16rpx;
+  padding: 4rpx 20rpx;
+  border-radius: 999rpx;
+  border: 1rpx solid #C9D9EC;
+  font-size: 22rpx;
+  color: #1B5A96;
+  background: #EDF3FA;
+}
+
+/* 内容卡片 */
+.card {
+  margin-top: 24rpx;
+  padding: 32rpx;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  box-shadow: 0 6rpx 20rpx rgba(31, 42, 55, 0.05);
+}
+.card-title {
+  display: flex;
+  align-items: center;
+}
+.title-bar {
+  width: 8rpx;
+  height: 30rpx;
+  border-radius: 4rpx;
+  background: #1B5A96;
+  margin-right: 16rpx;
+}
+.card-title text {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1F2A37;
+}
+
+/* 基本信息 */
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24rpx;
+}
+.info-item {
+  width: 50%;
+  display: flex;
+}
+.info-cell {
+  flex: 1;
+  margin: 6rpx;
+  background: #F7F9FC;
+  border-radius: 16rpx;
+  padding: 18rpx 22rpx;
+}
+.info-label {
+  display: block;
+  font-size: 22rpx;
+  color: #98A2B0;
+}
+.info-value {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  color: #26313F;
+}
+
+/* 联系方式 */
+.contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22rpx 0;
+  border-bottom: 1rpx solid #EEF1F5;
+}
+.contact-row.no-border {
+  border-bottom: none;
+}
+.contact-label {
+  font-size: 26rpx;
+  color: #6B7280;
+}
+.contact-value {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #1F2A37;
+}
+.contact-email {
+  max-width: 300rpx;
+}
+.contact-tip {
+  margin-top: 20rpx;
+  padding: 16rpx 20rpx;
+  border-radius: 14rpx;
+  background: #F4F8FC;
+  color: #6B7B8D;
+  font-size: 22rpx;
+  line-height: 1.6;
+}
+
+/* 正文段落 */
+.para {
+  margin-top: 24rpx;
+  font-size: 27rpx;
+  line-height: 1.9;
+  color: #37424F;
+  text-align: justify;
+}
+
+/* 荣誉奖项 */
+.award-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #EEF1F5;
+}
+.award-item.no-border {
+  border-bottom: none;
+}
+.award-icon {
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 12rpx;
+  background: #FBF3E3;
+  color: #B8860B;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20rpx;
+  flex: none;
+}
+.award-text {
+  font-size: 27rpx;
+  color: #26313F;
+}
+
+/* 能力标签 */
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 24rpx -6rpx -6rpx;
+}
+.skill {
+  margin: 6rpx;
+  padding: 10rpx 24rpx;
+  border-radius: 999rpx;
+  background: #F2F6FC;
+  border: 1rpx solid #DCE8F5;
+  color: #2C5E94;
+  font-size: 24rpx;
+}
+
+/* 底部 */
+.footer {
+  padding: 48rpx 40rpx 10rpx;
+  text-align: center;
+  color: #9AA3B0;
+  font-size: 22rpx;
+}
