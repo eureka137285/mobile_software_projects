@@ -1,0 +1,20 @@
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperImg}}" wx:key="src">
+    <image src="{{item.src}}" mode="aspectFill"></image>
+  </swiper-item>
+</swiper>
+<view class="notice-card">
+  <view class="notice-title">海大新闻速览</view>
+  <view class="notice-text">当前展示最新 {{newsCount}} 条校园新闻，点击标题可进入正文阅读。</view>
+</view>
+<view class="section-title">最新新闻</view>
+<view class="news-list">
+  <view class="news-item" wx:for="{{newsList}}" wx:key="id">
+    <image src="{{item.poster}}" mode="aspectFill"></image>
+    <text bindtap="goToDetail" data-id="{{item.id}}">{{item.title}}——{{item.add_date}}</text>
+  </view>
+</view>
+<view class="notice-card notice-card--footer">
+  <view class="notice-title">精彩更新中</view>
+  <view class="notice-text">更多校园动态持续更新中，收藏后可在“我的”页面快速查看。</view>
+</view>

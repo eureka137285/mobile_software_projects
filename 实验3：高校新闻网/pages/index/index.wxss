@@ -1,0 +1,13 @@
+swiper{
+  height: 340rpx;
+  width: 710rpx;
+  margin: 20rpx 20rpx 0;
+  border-radius: 24rpx;
+  overflow: hidden;
+  box-shadow: 0 10rpx 24rpx rgba(24, 83, 161, 0.08);
+}
+
+swiper image{
+  width: 100%;
+  height: 100%;
+}

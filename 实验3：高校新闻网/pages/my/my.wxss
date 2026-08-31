@@ -1,0 +1,63 @@
+.myLogin{
+  margin: 20rpx 20rpx 0;
+  padding: 36rpx 24rpx;
+  background: linear-gradient(135deg, #328EEB 0%, #0b67d1 100%);
+  border-radius: 24rpx;
+  box-shadow: 0 10rpx 24rpx rgba(50, 142, 235, 0.24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.myLogin image{
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 50%;
+  border: 6rpx solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 6rpx 18rpx rgba(0, 0, 0, 0.12);
+}
+
+.myLogin text{
+  color: white;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.myLogin button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 360rpx;
+  height: 84rpx;
+  margin: 0;
+  padding: 0 30rpx;
+  border-radius: 999rpx;
+  color: #0b67d1;
+  background: #fff;
+  font-size: 30rpx;
+  line-height: 1;
+  letter-spacing: 2rpx;
+  box-sizing: border-box;
+}
+
+.myLogin button::after{
+  border: 0;
+}
+
+.myFavorite{
+  margin: 20rpx;
+  padding: 24rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  box-shadow: 0 10rpx 24rpx rgba(24, 83, 161, 0.08);
+  box-sizing: border-box;
+}
+
+.myFavorite > text{
+  display: block;
+  margin-bottom: 14rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #0b67d1;
+}
