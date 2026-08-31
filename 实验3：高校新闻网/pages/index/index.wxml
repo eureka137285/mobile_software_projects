@@ -1,6 +1,14 @@
+<view class="search-entry" hover-class="search-entry-hover" hover-stay-time="120" bindtap="goToSearch">
+  <text class="search-entry-icon">🔍</text>
+  <text class="search-entry-text">搜索新闻标题 / 正文内容</text>
+</view>
 <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
-  <swiper-item wx:for="{{swiperImg}}" wx:key="src">
+  <swiper-item class="swiper-slide" wx:for="{{swiperImg}}" wx:key="id"
+               hover-class="swiper-hover" hover-stay-time="120"
+               bindtap="goToDetail" data-id="{{item.id}}">
     <image src="{{item.src}}" mode="aspectFill"></image>
+    <view class="swiper-mask"></view>
+    <view class="swiper-title">{{item.title}}</view>
   </swiper-item>
 </swiper>
 <view class="notice-card">
@@ -9,9 +17,12 @@
 </view>
 <view class="section-title">最新新闻</view>
 <view class="news-list">
-  <view class="news-item" wx:for="{{newsList}}" wx:key="id">
+  <view class="news-item" wx:for="{{newsList}}" wx:key="id"
+        style="animation-delay: {{index * 60}}ms"
+        hover-class="item-hover" hover-stay-time="120"
+        bindtap="goToDetail" data-id="{{item.id}}">
     <image src="{{item.poster}}" mode="aspectFill"></image>
-    <text bindtap="goToDetail" data-id="{{item.id}}">{{item.title}}——{{item.add_date}}</text>
+    <text>{{item.title}}——{{item.add_date}}</text>
   </view>
 </view>
 <view class="notice-card notice-card--footer">

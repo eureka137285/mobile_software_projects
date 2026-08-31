@@ -1,0 +1,41 @@
+<view class="search-bar">
+  <view class="search-input-wrap">
+    <text class="search-icon">🔍</text>
+    <input class="search-input" placeholder="输入关键词，支持模糊搜索" confirm-type="search"
+           value="{{keyword}}" focus="{{true}}"
+           bindinput="onInput" bindconfirm="onSearch" />
+    <text class="search-clear" wx:if="{{keyword}}" bindtap="clearKeyword">✕</text>
+  </view>
+  <view class="search-btn" hover-class="btn-hover" bindtap="onSearch">搜索</view>
+</view>
+
+<!-- 搜索历史 -->
+<view class="search-history" wx:if="{{!searched && history.length > 0}}">
+  <view class="history-header">
+    <text>搜索历史</text>
+    <text class="clear-btn" bindtap="clearHistory">清空</text>
+  </view>
+  <view class="history-tags">
+    <text class="history-tag" wx:for="{{history}}" wx:key="*this"
+          hover-class="item-hover" hover-stay-time="120"
+          bindtap="tapHistory" data-kw="{{item}}">{{item}}</text>
+  </view>
+</view>
+
+<!-- 搜索结果 -->
+<block wx:if="{{searched}}">
+  <view class="section-title">搜索结果（{{results.length}}）</view>
+  <view class="news-list" wx:if="{{results.length > 0}}">
+    <view class="news-item" wx:for="{{results}}" wx:key="id"
+          style="animation-delay: {{index * 60}}ms"
+          hover-class="item-hover" hover-stay-time="120"
+          bindtap="goToDetail" data-id="{{item.id}}">
+      <image src="{{item.poster}}" mode="aspectFill"></image>
+      <text>{{item.title}}——{{item.add_date}}</text>
+    </view>
+  </view>
+  <view class="search-empty" wx:else>
+    <text>未找到与“{{keyword}}”相关的新闻</text>
+    <text class="search-empty-tip">换个关键词试试吧</text>
+  </view>
+</block>

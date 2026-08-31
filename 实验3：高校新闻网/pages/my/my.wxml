@@ -1,16 +1,75 @@
 <view class="myLogin">
   <block wx:if="{{isLogin}}">
-    <image src="{{src}}"></image>
+    <image wx:if="{{src}}" src="{{src}}"></image>
+    <view class="avatar-placeholder" wx:else>匿</view>
     <text>{{nickName}}</text>
+    <text class="login-type" wx:if="{{userType === 'anon'}}">匿名登录</text>
+    <text class="logout-btn" bindtap="logout">退出登录</text>
   </block>
-  <button wx:else bindtap="getUserInfo">未登录，点此登录</button>
+  <block wx:else>
+    <button class="avatar-wrapper" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      <image class="avatar" src="{{avatarUrl}}"></image>
+    </button>
+    <input class="nick-input" type="nickname" placeholder="必填：点击可选用微信昵称" bindblur="onNicknameBlur" />
+    <text class="login-hint">请先选头像、填昵称再登录；头像选填，不选则用默认头像</text>
+    <button class="login-btn" bindtap="confirmLogin">确认登录</button>
+    <button class="anon-btn" bindtap="anonLogin">匿名登录</button>
+  </block>
 </view>
 <view class="myFavorite">
   <text>我的收藏（{{number}}）</text>
   <view class="news-list">
-    <view class="news-item" wx:for="{{newsList}}" wx:key="id">
-      <image src="{{item.poster}}" mode="aspectFill"></image>
-      <text bindtap="goToDetail" data-id="{{item.id}}">{{item.title}}——{{item.add_date}}</text>
+    <view class="swipe-item" wx:for="{{newsList}}" wx:key="id"
+          data-type="fav" data-index="{{index}}"
+          style="animation-delay: {{index * 60}}ms"
+          bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
+      <view class="news-item swipe-content {{slideKey === 'fav-' + index ? 'slide-open' : ''}}"
+            hover-class="item-hover" hover-stay-time="120"
+            bindtap="goToDetail" data-id="{{item.id}}">
+        <image src="{{item.poster}}" mode="aspectFill"></image>
+        <text>{{item.title}}——{{item.add_date}}</text>
+      </view>
+      <view class="swipe-del" catchtap="deleteFavorite" data-id="{{item.id}}">删除</view>
     </view>
   </view>
+</view>
+<view class="myLike">
+  <text>我的点赞（{{likedCount}}）</text>
+  <view class="news-list" wx:if="{{likedCount > 0}}">
+    <view class="swipe-item" wx:for="{{likedList}}" wx:key="id"
+          data-type="like" data-index="{{index}}"
+          style="animation-delay: {{index * 60}}ms"
+          bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
+      <view class="news-item swipe-content {{slideKey === 'like-' + index ? 'slide-open' : ''}}"
+            hover-class="item-hover" hover-stay-time="120"
+            bindtap="goToDetail" data-id="{{item.id}}">
+        <image src="{{item.poster}}" mode="aspectFill"></image>
+        <text>{{item.title}}——{{item.add_date}}</text>
+      </view>
+      <view class="swipe-del" catchtap="deleteLike" data-id="{{item.id}}">删除</view>
+    </view>
+  </view>
+  <view class="like-empty" wx:else>暂无点赞</view>
+</view>
+<view class="myHistory">
+  <view class="history-header">
+    <text>浏览历史（{{historyCount}}）</text>
+    <text class="clear-btn" wx:if="{{historyCount > 0}}" bindtap="clearHistory">清空</text>
+  </view>
+  <view class="news-list" wx:if="{{historyCount > 0}}">
+    <view class="news-item" wx:for="{{historyList}}" wx:key="id">
+      <view class="news-item-main"
+            style="animation-delay: {{index * 60}}ms"
+            hover-class="item-hover" hover-stay-time="120"
+            bindtap="goToDetail" data-id="{{item.id}}">
+        <image src="{{item.poster}}" mode="aspectFill"></image>
+        <view class="news-info">
+          <text class="news-title">{{item.title}}</text>
+          <text class="news-time">{{item.viewTimeText}} 浏览</text>
+        </view>
+      </view>
+      <view class="del-btn" catchtap="deleteHistoryItem" data-id="{{item.id}}">删除</view>
+    </view>
+  </view>
+  <view class="history-empty" wx:else>暂无观看历史</view>
 </view>

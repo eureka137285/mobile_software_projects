@@ -1,0 +1,139 @@
+/* 搜索栏 */
+.search-bar{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 16rpx 20rpx;
+  background: #f4f8ff;
+}
+
+.search-input-wrap{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 76rpx;
+  padding: 0 24rpx;
+  border-radius: 999rpx;
+  background: #fff;
+  box-shadow: 0 8rpx 20rpx rgba(24, 83, 161, 0.08);
+  box-sizing: border-box;
+}
+
+.search-icon{
+  font-size: 28rpx;
+  margin-right: 12rpx;
+}
+
+.search-input{
+  flex: 1;
+  height: 76rpx;
+  font-size: 28rpx;
+  color: #16345f;
+}
+
+.search-clear{
+  padding: 8rpx 4rpx 8rpx 16rpx;
+  font-size: 26rpx;
+  color: #8aa0bb;
+}
+
+.search-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120rpx;
+  height: 76rpx;
+  margin-left: 16rpx;
+  border-radius: 999rpx;
+  background: #328EEB;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: 600;
+  letter-spacing: 2rpx;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* 搜索历史 */
+.search-history{
+  margin: 20rpx;
+  padding: 24rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  box-shadow: 0 10rpx 24rpx rgba(24, 83, 161, 0.08);
+  box-sizing: border-box;
+  animation: fadeInUp 0.4s ease both;
+}
+
+.history-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+}
+
+.history-header > text:first-child{
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #0b67d1;
+}
+
+.clear-btn{
+  font-size: 24rpx;
+  color: #6f829a;
+  padding: 6rpx 10rpx;
+}
+
+.history-tags{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.history-tag{
+  margin: 0 14rpx 14rpx 0;
+  padding: 8rpx 24rpx;
+  border-radius: 999rpx;
+  background: #eef5ff;
+  color: #4a6f9e;
+  font-size: 24rpx;
+}
+
+/* 结果为空 */
+.search-empty{
+  margin: 40rpx 20rpx;
+  padding: 60rpx 0;
+  background: #fff;
+  border-radius: 24rpx;
+  box-shadow: 0 10rpx 24rpx rgba(24, 83, 161, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-empty text{
+  font-size: 28rpx;
+  color: #6f829a;
+}
+
+.search-empty .search-empty-tip{
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  color: #8aa0bb;
+}
+
+/* 结果入场动画 */
+.section-title{
+  animation: fadeInUp 0.4s ease both;
+}
+
+.news-list{
+  animation: fadeInUp 0.45s ease 0.05s both;
+}
+
+.news-item{
+  border-radius: 16rpx;
+  transition: background-color 0.2s ease;
+  animation: fadeInUp 0.45s ease both;
+}

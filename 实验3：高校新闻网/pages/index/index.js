@@ -6,11 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    //幻灯片素材
+    //幻灯片素材（顺序与下方新闻列表一一对应，携带 id 与标题，可点击跳转）
     swiperImg: [
-      {src: 'https://news.ouc.edu.cn/_upload/article/images/30/6b/13f1209e40608a955d175ac5dd02/f24f725e-9573-4bc8-a65b-bb7717917c1d.jpg'},
-      {src: 'https://news.ouc.edu.cn/_upload/article/images/e0/1a/0f1277ee4eb8afe3cc2f9fb37777/dba374ab-3182-4713-bb7b-bf2621b9db4f.jpg'},
-      {src: 'https://news.ouc.edu.cn/_upload/article/images/dc/f8/06c1b91d4f12876219c149ce1f4f/b2b9662a-1b49-4650-ba3d-093ab20ad9bd.jpg'}
+      {id: '305674', src: 'https://news.ouc.edu.cn/_upload/article/images/83/47/75d4ca9c44458941226f24393cd8/78960f5f-0a33-4fc8-99f4-07aff11860f4.jpg', title: '中国海洋大学迎来2026级本科生'},
+      {id: '304083', src: 'https://news.ouc.edu.cn/_upload/article/images/e0/1a/0f1277ee4eb8afe3cc2f9fb37777/dba374ab-3182-4713-bb7b-bf2621b9db4f.jpg', title: '中国船舶集团有限公司董事长、党组书记徐鹏来校调研'},
+      {id: '264698', src: 'https://news.ouc.edu.cn/_upload/article/images/30/6b/13f1209e40608a955d175ac5dd02/f24f725e-9573-4bc8-a65b-bb7717917c1d.jpg', title: '山东省人民政府副省长、党组成员闫剑波来校调研'},
+      {id: '305670', src: 'https://news.ouc.edu.cn/_upload/article/images/dc/f8/06c1b91d4f12876219c149ce1f4f/b2b9662a-1b49-4650-ba3d-093ab20ad9bd.jpg', title: '中国海洋大学2026级研究生开学典礼举行'}
     ],
     newsList: [],
     newsCount: 0
@@ -22,9 +23,22 @@ Page({
   goToDetail: function(e) {
     //获取携带的data-id数据
     let id = e.currentTarget.dataset.id;
-    //携带新闻id进行页面跳转
+    //携带新闻id进行页面跳转，slide-in-bottom 从底部滑入
     wx.navigateTo({
-      url: '../detail/detail?id=' + id
+      url: '../detail/detail?id=' + id,
+      animationType: 'slide-in-bottom',
+      animationDuration: 350
+    })
+  },
+
+  /**
+   * 自定义函数--跳转搜索页
+   */
+  goToSearch: function() {
+    wx.navigateTo({
+      url: '../search/search',
+      animationType: 'slide-in-bottom',
+      animationDuration: 350
     })
   },
 

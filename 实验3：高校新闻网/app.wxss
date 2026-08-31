@@ -3,6 +3,42 @@ page{
   color: #16345f;
 }
 
+/* ========== 全局动画（跳转 / 入场） ========== */
+
+/* 淡入上移：页面/卡片/列表项通用入场 */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40rpx); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 纯淡入 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* 缩放淡入：标题等强调元素 */
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* 轮播图缓慢放大（Ken Burns 效果） */
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+/* 点击按压反馈（配合 hover-class 使用） */
+.item-hover{
+  background: rgba(50, 142, 235, 0.08);
+}
+
+.btn-hover{
+  transform: scale(0.96);
+  opacity: 0.9;
+}
+
 .section-title{
   display: flex;
   align-items: center;
