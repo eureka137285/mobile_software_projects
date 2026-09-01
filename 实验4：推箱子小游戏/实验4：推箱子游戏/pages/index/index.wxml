@@ -1,0 +1,22 @@
+<view class="container">
+  <!--标题区-->
+  <view class="header">
+    <view class="title">游戏选关</view>
+    <view class="subtitle">选择一个关卡开始推箱子吧</view>
+  </view>
+
+  <!--关卡列表-->
+  <view class="levelBox">
+    <view class="box" wx:for="{{levels}}" wx:key="img" hover-class="hover" bindtap="chooseLevel" data-level="{{index}}">
+      <!--已通关角标-->
+      <view class="badgeBox" wx:if="{{item.done}}">
+        <text>已过关</text>
+      </view>
+      <image src="/images/{{item.img}}"></image>
+      <text>第{{index + 1}}关</text>
+    </view>
+  </view>
+
+  <!--底部提示-->
+  <view class="footer">推箱子·把箱子推到终点吧！</view>
+</view>

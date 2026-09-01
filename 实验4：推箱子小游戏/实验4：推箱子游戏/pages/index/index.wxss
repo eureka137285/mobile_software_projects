@@ -1,0 +1,82 @@
+/*标题区域*/
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*副标题*/
+.subtitle{
+  margin-top: 12rpx;
+  font-size: 10pt;
+  font-weight: normal;
+  color: #7FB28A;
+}
+
+/*关卡列表区域*/
+.levelBox{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*单个关卡卡片*/
+.box{
+  position: relative;
+  width: 300rpx;
+  margin: 20rpx;
+  padding: 28rpx 0 22rpx;
+  background: #ffffff;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(62, 142, 78, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*已通关角标（悬浮在卡片右上角，不遮挡图片和关卡名）*/
+.badgeBox{
+  position: absolute;
+  top: -14rpx;
+  right: -8rpx;
+  padding: 8rpx 18rpx;
+  background: linear-gradient(135deg, #F5A623, #F56C2D);
+  border-radius: 26rpx 26rpx 26rpx 6rpx;
+  box-shadow: 0 4rpx 10rpx rgba(245, 108, 45, 0.35);
+  z-index: 2;
+}
+
+.badgeBox text{
+  font-size: 9pt;
+  color: #ffffff;
+  letter-spacing: 2rpx;
+  margin-top: 0;
+}
+
+/*选关图片*/
+.box image{
+  width: 260rpx;
+  height: 260rpx;
+  border-radius: 16rpx;
+}
+
+/*关卡名称*/
+.box > text{
+  margin-top: 16rpx;
+  color: #4A7C59;
+}
+
+/*点击时的效果*/
+.hover{
+  opacity: 0.85;
+  transform: scale(0.95);
+}
+
+/*底部提示*/
+.footer{
+  font-size: 9pt;
+  font-weight: normal;
+  color: #8FBC94;
+  padding-bottom: 40rpx;
+}

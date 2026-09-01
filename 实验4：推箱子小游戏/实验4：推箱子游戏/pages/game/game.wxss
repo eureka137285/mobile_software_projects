@@ -1,0 +1,203 @@
+/* pages/game/game.wxss */
+
+/*标题区域*/
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*副标题*/
+.subtitle{
+  margin-top: 8rpx;
+  font-size: 9pt;
+  font-weight: normal;
+  color: #7FB28A;
+}
+
+/*画布外框*/
+.canvasBox{
+  padding: 16rpx;
+  background: #ffffff;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(62, 142, 78, 0.18);
+}
+
+/*游戏画布样式*/
+canvas{
+  width: 320px;
+  height: 320px;
+  border-radius: 16rpx;
+}
+
+/*方向键按钮整体区域*/
+.btnBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*方向键按钮第二行*/
+.btnBox view {
+  display: flex;
+  flex-direction: row;
+}
+
+/*所有方向键按钮*/
+.dirBtn{
+  width: 150rpx !important;
+  height: 150rpx !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 14rpx;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56rpx;
+  line-height: 1;
+  color: #3E8E4E;
+  background: #ffffff;
+  border-radius: 32rpx;
+  box-shadow: 0 4rpx 10rpx rgba(62, 142, 78, 0.15);
+}
+
+/*方向键按下效果*/
+.dirBtn.button-hover{
+  background: #D9F0DE;
+  transform: scale(0.92);
+}
+
+/*底部操作栏：上一关 / 重新开始 / 下一关*/
+.bottomBtns{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/*上一关/下一关按钮*/
+.navBtn{
+  width: 180rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 10rpx;
+  padding: 0;
+  border-radius: 40rpx;
+  font-size: 12pt;
+  color: #3E8E4E;
+  background: #ffffff;
+  border: 2rpx solid #3E8E4E;
+  box-sizing: border-box;
+  box-shadow: 0 4rpx 10rpx rgba(62, 142, 78, 0.15);
+}
+
+/*上一关/下一关按钮按下效果*/
+.navBtn.button-hover{
+  opacity: 0.85;
+}
+
+/*重新开始按钮*/
+.restartBtn{
+  width: 260rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 20rpx;
+  padding: 0;
+  border-radius: 40rpx;
+  font-size: 14pt;
+  color: #ffffff;
+  background: linear-gradient(135deg, #67C23A, #3E8E4E);
+  box-shadow: 0 6rpx 16rpx rgba(62, 142, 78, 0.25);
+}
+
+/*重新开始按钮按下效果*/
+.restartBtn.button-hover{
+  opacity: 0.85;
+}
+
+/*去掉按钮默认边框*/
+button::after{
+  border: none;
+}
+
+/*通关弹窗遮罩*/
+.modalMask{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+/*通关弹窗主体*/
+.winModal{
+  width: 560rpx;
+  padding: 48rpx 40rpx 40rpx;
+  background: #ffffff;
+  border-radius: 32rpx;
+  box-shadow: 0 16rpx 48rpx rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*通关标题*/
+.winTitle{
+  font-size: 20pt;
+  color: #3E8E4E;
+  letter-spacing: 2rpx;
+}
+
+/*通关步数提示*/
+.winSteps{
+  margin-top: 12rpx;
+  font-size: 10pt;
+  font-weight: normal;
+  color: #8FBC94;
+}
+
+/*通关按钮区域*/
+.winBtns{
+  width: 100%;
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/*通关按钮*/
+.winBtn{
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0;
+  margin-top: 20rpx;
+  border-radius: 44rpx;
+  font-size: 14pt;
+  color: #ffffff;
+  background: linear-gradient(135deg, #67C23A, #3E8E4E);
+}
+
+/*第一个按钮去掉上边距*/
+.winBtns .winBtn:first-child{
+  margin-top: 0;
+}
+
+/*返回选关按钮（次级样式）*/
+.winBtn.home{
+  background: #ffffff;
+  color: #3E8E4E;
+  border: 2rpx solid #3E8E4E;
+  box-sizing: border-box;
+}
+
+/*通关按钮按下效果*/
+.winBtn.button-hover{
+  opacity: 0.85;
+}

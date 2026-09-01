@@ -1,0 +1,42 @@
+<view class="container">
+  <!--关卡提示-->
+  <view class="header">
+    <view class="title">第{{level}}关</view>
+    <view class="subtitle">共 {{total}} 关 · 已走 {{steps}} 步</view>
+  </view>
+
+  <!--游戏画布（通关弹窗显示时隐藏，避免原生画布盖住弹窗）-->
+  <view class="canvasBox" hidden="{{showWinModal}}">
+    <canvas canvas-id="myCanvas"></canvas>
+  </view>
+
+  <!--方向键-->
+  <view class="btnBox">
+    <button class="dirBtn" bindtap="up">↑</button>
+    <view>
+      <button class="dirBtn" bindtap="left">←</button>
+      <button class="dirBtn" bindtap="down">↓</button>
+      <button class="dirBtn" bindtap="right">→</button>
+    </view>
+  </view>
+
+  <!--底部操作栏：上一关 / 重新开始 / 下一关-->
+  <view class="bottomBtns">
+    <button class="navBtn" wx:if="{{hasPrev}}" bindtap="goPrev">上一关</button>
+    <button class="restartBtn" bindtap="restartGame">重新开始</button>
+    <button class="navBtn" wx:if="{{hasNext}}" bindtap="goNext">下一关</button>
+  </view>
+
+  <!--通关弹窗-->
+  <view class="modalMask" wx:if="{{showWinModal}}" bindtap="closeWinModal">
+    <view class="winModal" catchtap="noop">
+      <view class="winTitle">恭喜过关！</view>
+      <view class="winSteps">共用 {{steps}} 步完成本关</view>
+      <view class="winBtns">
+        <button class="winBtn" wx:if="{{hasPrev}}" bindtap="goPrev">上一关</button>
+        <button class="winBtn" wx:if="{{hasNext}}" bindtap="goNext">下一关</button>
+        <button class="winBtn home" bindtap="goHome">返回选关页面</button>
+      </view>
+    </view>
+  </view>
+</view>
